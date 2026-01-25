@@ -1,0 +1,47 @@
+{
+  "company": {
+    "company_Id": "",
+    "name": "",
+  },
+  "job_opening": {
+    "job_id": "",
+    "job_title": "",
+    "number_of_openings": "",
+    "department": "",
+    "location": [],
+    "work_mode": "",
+    "job_description": "",
+    "requirements": {
+      "education": "",
+      "technical_skills": [],
+      "soft_skills": [],
+      "experience": "",
+      "languages": {
+        "required": [],
+        "preferred": []
+      },
+      "work_authorization": ""
+    },
+    "employment_details": {
+      "job_type": "",
+      "contract_type": "",
+      "working_hours": "",
+      "salary_range": {
+        "min": "",
+        "max": "",
+        "currency": ""
+      },
+      "benefits": []
+    },
+    "required_documents": [],
+    "contact": {
+      "recruiter_name": "",
+      "email": "",
+      "phone": ""
+    },
+    "posting_date": "",
+    "closing_date": "",
+    "starting_date": "",
+    "duratuion": ""
+  }
+}
