@@ -1,0 +1,292 @@
+{
+  "components": [
+    {
+      "type": "text",
+      "text": "# Validate Received Hiring Request"
+    },
+    {
+      "type": "group",
+      "label": "Company",
+      "components": [
+        {
+          "type": "textfield",
+          "label": "Company ID",
+          "key": "companyId_view",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.company.company_Id"
+        },
+        {
+          "type": "textfield",
+          "label": "Company Name",
+          "key": "companyName_view",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.company.name"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": "Job opening",
+      "components": [
+        {
+          "type": "textfield",
+          "label": "Job ID",
+          "key": "jobId_view",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.job_id"
+        },
+        {
+          "type": "textfield",
+          "label": "Job title",
+          "key": "jobTitle_view",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.job_title"
+        },
+        {
+          "type": "number",
+          "label": "Number of openings",
+          "key": "openings_view",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.number_of_openings"
+        },
+        {
+          "type": "textfield",
+          "label": "Department",
+          "key": "department_view",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.department"
+        },
+        {
+          "type": "textarea",
+          "label": "Locations (list)",
+          "key": "locations",
+          "readOnly": true,
+          "defaultValue": "=stringify(hiringRequest.job_opening.location)"
+        },
+        {
+          "type": "textfield",
+          "label": "Work mode",
+          "key": "workMode_view",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.work_mode"
+        },
+        {
+          "type": "textarea",
+          "label": "Job description",
+          "key": "jobDescription_view",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.job_description"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": "Requirements",
+      "components": [
+        {
+          "type": "textfield",
+          "label": "Education",
+          "key": "education_view",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.requirements.education"
+        },
+        {
+          "type": "textarea",
+          "label": "Technical skills (list)",
+          "key": "techSkills_view",
+          "readOnly": true,
+          "defaultValue": "=stringify(hiringRequest.job_opening.requirements.technical_skills)"
+        },
+        {
+          "type": "textarea",
+          "label": "Soft skills (list)",
+          "key": "softSkills_view",
+          "readOnly": true,
+          "defaultValue": "=stringify(hiringRequest.job_opening.requirements.soft_skills)"
+        },
+        {
+          "type": "textfield",
+          "label": "Experience",
+          "key": "experience_view",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.requirements.experience"
+        },
+        {
+          "type": "textarea",
+          "label": "Languages required",
+          "key": "langReq_view",
+          "readOnly": true,
+          "defaultValue": "=stringify(hiringRequest.job_opening.requirements.languages.required)"
+        },
+        {
+          "type": "textarea",
+          "label": "Languages preferred",
+          "key": "langPref_view",
+          "readOnly": true,
+          "defaultValue": "=stringify(hiringRequest.job_opening.requirements.languages.preferred)"
+        },
+        {
+          "type": "textfield",
+          "label": "Work authorization",
+          "key": "workAuth_view",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.requirements.work_authorization"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": "Employment details",
+      "components": [
+        {
+          "type": "textfield",
+          "label": "Job type",
+          "key": "jobType_view",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.employment_details.job_type"
+        },
+        {
+          "type": "textfield",
+          "label": "Contract type",
+          "key": "contractType_view",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.employment_details.contract_type"
+        },
+        {
+          "type": "textfield",
+          "label": "Working hours",
+          "key": "workingHours_view",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.employment_details.working_hours"
+        },
+        {
+          "type": "textfield",
+          "label": "Salary min",
+          "key": "salaryMin_view",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.employment_details.salary_range.min"
+        },
+        {
+          "type": "textfield",
+          "label": "Salary max",
+          "key": "salaryMax_view",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.employment_details.salary_range.max"
+        },
+        {
+          "type": "textfield",
+          "label": "Currency",
+          "key": "currency_view",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.employment_details.salary_range.currency"
+        },
+        {
+          "type": "textarea",
+          "label": "Benefits (list)",
+          "key": "benefits_view",
+          "readOnly": true,
+          "defaultValue": "=stringify(hiringRequest.job_opening.employment_details.benefits)"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": "Required Documents",
+      "components": [
+        {
+          "type": "textarea",
+          "label": "Documents list",
+          "key": "required_documents",
+          "readOnly": true,
+          "defaultValue": "=stringify(hiringRequest.required_documents)"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": "Contact and dates",
+      "components": [
+        {
+          "type": "textfield",
+          "label": "Recruiter name",
+          "key": "recruiter_view",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.contact.recruiter_name"
+        },
+        {
+          "type": "textfield",
+          "label": "Recruiter email",
+          "key": "email_view",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.contact.email"
+        },
+        {
+          "type": "textfield",
+          "label": "Recruiter phone",
+          "key": "phone_view",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.contact.phone"
+        },
+        {
+          "type": "textfield",
+          "label": "Posting date",
+          "key": "postingDate_view",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.posting_date"
+        },
+        {
+          "type": "textfield",
+          "label": "Closing date",
+          "key": "closingDate_view",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.closing_date"
+        },
+        {
+          "type": "textfield",
+          "label": "Starting date",
+          "key": "startingDate_view",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.starting_date"
+        },
+        {
+          "type": "textfield",
+          "label": "Duration",
+          "key": "duration_view",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.duratuion"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": "Validation decision",
+      "components": [
+        {
+          "type": "radio",
+          "label": "Decision",
+          "key": "validation.approved",
+          "values": [
+            { "label": "Approve", "value": true },
+            { "label": "Reject", "value": false }
+          ],
+          "validate": { "required": true }
+        },
+        {
+          "type": "textarea",
+          "label": "Comment (required if rejected)",
+          "key": "validation.comment",
+          "validate": { "required": false }
+        }
+      ]
+    }
+  ],
+  "type": "default",
+  "id": "validate_received_hiring_request",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.8.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.41.0"
+  },
+  "schemaVersion": 19
+}

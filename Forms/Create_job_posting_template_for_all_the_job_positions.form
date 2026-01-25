@@ -1,0 +1,147 @@
+{
+  "type": "default",
+  "id": "create-job-posting-template",
+  "components": [
+    {
+      "type": "text",
+      "text": "# Create job posting template"
+    },
+    {
+      "type": "group",
+      "label": "Request overview (read-only)",
+      "components": [
+        {
+          "type": "textfield",
+          "label": "Company name",
+          "key": "view_company_name",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.company.name"
+        },
+        {
+          "type": "textfield",
+          "label": "Job title (from request)",
+          "key": "view_job_title",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.job_title"
+        },
+        {
+          "type": "number",
+          "label": "Number of openings",
+          "key": "view_openings",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.number_of_openings"
+        },
+        {
+          "type": "textfield",
+          "label": "Department",
+          "key": "view_department",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.department"
+        },
+        {
+          "type": "textfield",
+          "label": "Work mode",
+          "key": "view_work_mode",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.work_mode"
+        }
+      ]
+    },
+
+    {
+      "type": "group",
+      "label": "Job posting template (editable)",
+      "components": [
+        {
+          "type": "textfield",
+          "label": "Posting title",
+          "key": "jobPostingTemplate.title",
+          "defaultValue": "=hiringRequest.job_opening.job_title",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textarea",
+          "label": "Short summary (2–5 lines for the top of the job ad)",
+          "key": "jobPostingTemplate.summary",
+          "defaultValue": "=hiringRequest.job_opening.job_description",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textarea",
+          "label": "Responsibilities (bullet style text)",
+          "key": "jobPostingTemplate.responsibilities",
+          "description": "Write responsibilities in bullet format (one per line).",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textarea",
+          "label": "Requirements (bullet style text)",
+          "key": "jobPostingTemplate.requirements",
+          "description": "Include education, skills, experience, languages, and work authorization if relevant.",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textarea",
+          "label": "Benefits (optional)",
+          "key": "jobPostingTemplate.benefits",
+          "description": "If benefits exist, list them in bullet format."
+        }
+      ]
+    },
+
+    {
+      "type": "group",
+      "label": "Location, employment, salary",
+      "components": [
+        {
+          "type": "textfield",
+          "label": "Location (text for the job ad)",
+          "key": "jobPostingTemplate.locationText",
+          "description": "Example: Berlin, Germany / Remote / Hybrid. If multiple locations exist, write a human-friendly line.",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textfield",
+          "label": "Work mode (for posting)",
+          "key": "jobPostingTemplate.workMode",
+          "defaultValue": "=hiringRequest.job_opening.work_mode",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textfield",
+          "label": "Employment type",
+          "key": "jobPostingTemplate.employmentType",
+          "defaultValue": "=hiringRequest.job_opening.employment_details.job_type",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textfield",
+          "label": "Salary (text for job ad, optional)",
+          "key": "jobPostingTemplate.salaryText",
+          "description": "Example: €50k–€65k gross/year (depending on experience)."
+        }
+      ]
+    },
+
+    {
+      "type": "group",
+      "label": "Publishing instructions",
+      "components": [
+        {
+          "type": "textarea",
+          "label": "How to apply (instructions shown in job ad)",
+          "key": "jobPostingTemplate.applyInstructions",
+          "description": "Example: Apply via link / send CV to email / include portfolio.",
+          "validate": { "required": true }
+        },
+        {
+          "type": "checkbox",
+          "label": "Ready to publish online?",
+          "key": "jobPostingTemplate.publishOnline"
+        }
+      ]
+    }
+  ],
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.8.0"
+}

@@ -1,0 +1,49 @@
+{
+  "components": [
+    {
+      "text": "# Do some hard work",
+      "type": "text",
+      "id": "Field_0ope6ib",
+      "layout": {
+        "row": "Row_0rlv9aw"
+      }
+    },
+    {
+      "label": "Select the work",
+      "values": [
+        {
+          "label": "Implement a Workflow model",
+          "value": "Implement a workflow model"
+        },
+        {
+          "label": "Write a resarch paper",
+          "value": "Write a resarch paper"
+        }
+      ],
+      "type": "checklist",
+      "id": "Field_0agft1q",
+      "key": "selectedWork",
+      "layout": {
+        "row": "Row_02xh6ic"
+      }
+    },
+    {
+      "label": "My Thoughts",
+      "type": "textarea",
+      "id": "Field_0zack0x",
+      "key": "myThoughts",
+      "layout": {
+        "row": "Row_1mfrcwj"
+      }
+    }
+  ],
+  "type": "default",
+  "id": "Form_DoHardWork",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.8.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.40.1"
+  },
+  "schemaVersion": 19
+}

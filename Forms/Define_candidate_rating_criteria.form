@@ -1,0 +1,266 @@
+{
+  "components": [
+    {
+      "type": "text",
+      "text": "# Define candidate rating criteria"
+    },
+    {
+      "type": "text",
+      "text": "Review origin rating standards and define the final evaluation framework, scoring scale, and weights."
+    },
+
+    {
+      "type": "group",
+      "label": "Context (read-only)",
+      "components": [
+        {
+          "type": "textfield",
+          "label": "Job title",
+          "key": "view_job_title",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.job_title"
+        },
+        {
+          "type": "textfield",
+          "label": "Department",
+          "key": "view_department",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.department"
+        },
+        {
+          "type": "textfield",
+          "label": "Work mode",
+          "key": "view_work_mode",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.work_mode"
+        }
+      ]
+    },
+
+    {
+      "type": "group",
+      "label": "Origin standards (read-only reference)",
+      "components": [
+        {
+          "type": "textfield",
+          "label": "Evaluation stage",
+          "key": "view_stage",
+          "readOnly": true,
+          "defaultValue": "=originStandards.candidate_rating_standards.evaluation_framework.evaluation_stage"
+        },
+        {
+          "type": "textfield",
+          "label": "Evaluator role",
+          "key": "view_role",
+          "readOnly": true,
+          "defaultValue": "=originStandards.candidate_rating_standards.evaluation_framework.evaluator_role"
+        },
+        {
+          "type": "textfield",
+          "label": "Scoring scale",
+          "key": "view_scale",
+          "readOnly": true,
+          "defaultValue": "=originStandards.candidate_rating_standards.evaluation_framework.scoring_scale"
+        },
+        {
+          "type": "textfield",
+          "label": "Weighting method",
+          "key": "view_weighting_method",
+          "readOnly": true,
+          "defaultValue": "=originStandards.candidate_rating_standards.evaluation_framework.weighting_method"
+        },
+        {
+          "type": "number",
+          "label": "Minimum passing score",
+          "key": "view_min_score",
+          "readOnly": true,
+          "defaultValue": "=originStandards.candidate_rating_standards.evaluation_framework.minimum_passing_score"
+        },
+        {
+          "type": "textfield",
+          "label": "Overall score formula",
+          "key": "view_formula",
+          "readOnly": true,
+          "defaultValue": "=originStandards.candidate_rating_standards.evaluation_framework.overall_score_formula"
+        }
+      ]
+    },
+
+    {
+      "type": "group",
+      "label": "Final evaluation framework (editable output)",
+      "components": [
+        {
+          "type": "textfield",
+          "label": "Evaluation stage",
+          "key": "ratingCriteria.framework.evaluationStage",
+          "defaultValue": "=originStandards.candidate_rating_standards.evaluation_framework.evaluation_stage",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textfield",
+          "label": "Evaluator role",
+          "key": "ratingCriteria.framework.evaluatorRole",
+          "defaultValue": "=originStandards.candidate_rating_standards.evaluation_framework.evaluator_role",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textfield",
+          "label": "Scoring scale (example: 0-5, 0-10, 0-100)",
+          "key": "ratingCriteria.framework.scoringScale",
+          "defaultValue": "=originStandards.candidate_rating_standards.evaluation_framework.scoring_scale",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textfield",
+          "label": "Weighting method (example: weighted-average)",
+          "key": "ratingCriteria.framework.weightingMethod",
+          "defaultValue": "=originStandards.candidate_rating_standards.evaluation_framework.weighting_method",
+          "validate": { "required": true }
+        },
+        {
+          "type": "number",
+          "label": "Minimum passing score",
+          "key": "ratingCriteria.framework.minimumPassingScore",
+          "defaultValue": "=originStandards.candidate_rating_standards.evaluation_framework.minimum_passing_score",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textfield",
+          "label": "Overall score formula (text)",
+          "key": "ratingCriteria.framework.overallScoreFormula",
+          "defaultValue": "=originStandards.candidate_rating_standards.evaluation_framework.overall_score_formula",
+          "validate": { "required": true }
+        }
+      ]
+    },
+
+    {
+      "type": "group",
+      "label": "Category weights (must sum to 100)",
+      "components": [
+        {
+          "type": "number",
+          "label": "Technical / skills assessment weight (%)",
+          "key": "ratingCriteria.weights.skillsAssessment",
+          "defaultValue": 30,
+          "validate": { "required": true, "min": 0, "max": 100 }
+        },
+        {
+          "type": "number",
+          "label": "Behavioral / soft skills weight (%)",
+          "key": "ratingCriteria.weights.behavioralSoftSkills",
+          "defaultValue": 25,
+          "validate": { "required": true, "min": 0, "max": 100 }
+        },
+        {
+          "type": "number",
+          "label": "Experience & impact weight (%)",
+          "key": "ratingCriteria.weights.experienceImpact",
+          "defaultValue": 20,
+          "validate": { "required": true, "min": 0, "max": 100 }
+        },
+        {
+          "type": "number",
+          "label": "Cultural / organizational fit weight (%)",
+          "key": "ratingCriteria.weights.cultureFit",
+          "defaultValue": 15,
+          "validate": { "required": true, "min": 0, "max": 100 }
+        },
+        {
+          "type": "number",
+          "label": "Interview / assessments weight (%)",
+          "key": "ratingCriteria.weights.interviewAssessments",
+          "defaultValue": 10,
+          "validate": { "required": true, "min": 0, "max": 100 }
+        }
+      ]
+    },
+
+    {
+      "type": "group",
+      "label": "Detailed scoring guidance (editable)",
+      "components": [
+        {
+          "type": "textarea",
+          "label": "Skills assessment criteria (one per line)",
+          "key": "ratingCriteria.details.skillsAssessment",
+          "description": "Example: Technical competency, Tool proficiency, Problem solving (one per line)."
+        },
+        {
+          "type": "textarea",
+          "label": "Behavioral & soft skills criteria (one per line)",
+          "key": "ratingCriteria.details.behavioralSoftSkills",
+          "description": "Example: Communication, Teamwork, Adaptability (one per line)."
+        },
+        {
+          "type": "textarea",
+          "label": "Experience & impact criteria (one per line)",
+          "key": "ratingCriteria.details.experienceImpact",
+          "description": "Example: Relevance, Evidence of achievements, Complexity handled (one per line)."
+        },
+        {
+          "type": "textarea",
+          "label": "Cultural & organizational fit criteria (one per line)",
+          "key": "ratingCriteria.details.cultureFit",
+          "description": "Example: Values alignment, Ethical judgment, Stakeholder focus (one per line)."
+        },
+        {
+          "type": "textarea",
+          "label": "Interview & assessments criteria (one per line)",
+          "key": "ratingCriteria.details.interviewAssessments",
+          "description": "Example: Interview performance, Case study, Presentation (one per line)."
+        }
+      ]
+    },
+
+    {
+      "type": "group",
+      "label": "Final evaluation rules",
+      "components": [
+        {
+          "type": "textarea",
+          "label": "Red flag indicators (one per line)",
+          "key": "ratingCriteria.final.redFlagIndicators",
+          "description": "Example: Inconsistent timeline; unverifiable credentials; major policy violations."
+        },
+        {
+          "type": "textfield",
+          "label": "Overall recommendation options (text)",
+          "key": "ratingCriteria.final.recommendationOptions",
+          "description": "Example: Strong Hire / Hire / Hold / No Hire",
+          "defaultValue": "Strong Hire / Hire / Hold / No Hire",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textarea",
+          "label": "Notes (optional)",
+          "key": "ratingCriteria.notes"
+        }
+      ]
+    },
+
+    {
+      "type": "group",
+      "label": "Quick check (manual)",
+      "components": [
+        {
+          "type": "number",
+          "label": "Confirm total weight (%) (enter 100)",
+          "key": "ratingCriteria.weightTotalCheck",
+          "description": "Add all category weights and type the total here. It should be 100.",
+          "validate": { "required": true }
+        }
+      ]
+    }
+  ],
+  "type": "default",
+  "id": "define-candidate-rating-criteria",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.8.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.41.0"
+  },
+  "schemaVersion": 19
+}

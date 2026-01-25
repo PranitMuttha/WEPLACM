@@ -1,0 +1,300 @@
+{
+  "components": [
+    {
+      "type": "text",
+      "text": "# Create Job Profile"
+    },
+    {
+      "type": "text",
+      "text": "Finalize the job profile that will be stored in the database. Use the job posting template, eligibility criteria, rating criteria, and ATS checklist as inputs."
+    },
+
+    {
+      "type": "group",
+      "label": "Reference (read-only)",
+      "components": [
+        {
+          "type": "textfield",
+          "label": "Company",
+          "key": "view_company",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.company.name"
+        },
+        {
+          "type": "textfield",
+          "label": "Job title (request)",
+          "key": "view_job_title",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.job_title"
+        },
+        {
+          "type": "number",
+          "label": "Openings",
+          "key": "view_openings",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.number_of_openings"
+        },
+        {
+          "type": "textfield",
+          "label": "Work mode",
+          "key": "view_work_mode",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.work_mode"
+        },
+        {
+          "type": "textfield",
+          "label": "Employment type",
+          "key": "view_employment_type",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.employment_details.job_type"
+        }
+      ]
+    },
+
+    {
+      "type": "group",
+      "label": "Job profile identity (editable output)",
+      "components": [
+        {
+          "type": "textfield",
+          "label": "Internal Job Profile ID",
+          "key": "jobProfile.profileId",
+          "description": "Example: JP-2026-001 (your internal format)",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textfield",
+          "label": "Job ID from origin company",
+          "key": "jobProfile.externalJobId",
+          "defaultValue": "=hiringRequest.job_opening.job_id",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textfield",
+          "label": "Job title (final)",
+          "key": "jobProfile.title",
+          "defaultValue": "=jobPostingTemplate.title",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textfield",
+          "label": "Department",
+          "key": "jobProfile.department",
+          "defaultValue": "=hiringRequest.job_opening.department",
+          "validate": { "required": true }
+        }
+      ]
+    },
+
+    {
+      "type": "group",
+      "label": "Job posting content (final stored version)",
+      "components": [
+        {
+          "type": "textarea",
+          "label": "Posting summary",
+          "key": "jobProfile.posting.summary",
+          "defaultValue": "=jobPostingTemplate.summary",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textarea",
+          "label": "Responsibilities",
+          "key": "jobProfile.posting.responsibilities",
+          "defaultValue": "=jobPostingTemplate.responsibilities",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textarea",
+          "label": "Requirements",
+          "key": "jobProfile.posting.requirements",
+          "defaultValue": "=jobPostingTemplate.requirements",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textarea",
+          "label": "Benefits",
+          "key": "jobProfile.posting.benefits",
+          "defaultValue": "=jobPostingTemplate.benefits"
+        },
+        {
+          "type": "textfield",
+          "label": "Location (final text)",
+          "key": "jobProfile.posting.locationText",
+          "defaultValue": "=jobPostingTemplate.locationText",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textfield",
+          "label": "Work mode",
+          "key": "jobProfile.posting.workMode",
+          "defaultValue": "=jobPostingTemplate.workMode",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textfield",
+          "label": "Employment type",
+          "key": "jobProfile.posting.employmentType",
+          "defaultValue": "=jobPostingTemplate.employmentType",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textfield",
+          "label": "Salary text",
+          "key": "jobProfile.posting.salaryText",
+          "defaultValue": "=jobPostingTemplate.salaryText"
+        },
+        {
+          "type": "textarea",
+          "label": "How to apply",
+          "key": "jobProfile.posting.applyInstructions",
+          "defaultValue": "=jobPostingTemplate.applyInstructions",
+          "validate": { "required": true }
+        },
+        {
+          "type": "checkbox",
+          "label": "Ready to publish online",
+          "key": "jobProfile.posting.publishOnline",
+          "defaultValue": "=jobPostingTemplate.publishOnline"
+        }
+      ]
+    },
+
+    {
+      "type": "group",
+      "label": "Eligibility & rating (stored references)",
+      "components": [
+        {
+          "type": "textfield",
+          "label": "Eligibility minimum legal age",
+          "key": "jobProfile.eligibility.minLegalWorkingAge",
+          "defaultValue": "=eligibilityCriteria.minLegalWorkingAge",
+          "validate": { "required": true }
+        },
+        {
+          "type": "checkbox",
+          "label": "Work authorization required",
+          "key": "jobProfile.eligibility.workAuthorizationRequired",
+          "defaultValue": "=eligibilityCriteria.workAuthorizationRequired"
+        },
+        {
+          "type": "textfield",
+          "label": "Required education level",
+          "key": "jobProfile.eligibility.requiredEducationLevel",
+          "defaultValue": "=eligibilityCriteria.requiredEducationLevel",
+          "validate": { "required": true }
+        },
+        {
+          "type": "number",
+          "label": "Minimum years experience",
+          "key": "jobProfile.eligibility.minYearsExperience",
+          "defaultValue": "=eligibilityCriteria.minYearsExperience",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textarea",
+          "label": "Technical prerequisites",
+          "key": "jobProfile.eligibility.technicalPrerequisites",
+          "defaultValue": "=eligibilityCriteria.technicalPrerequisites"
+        },
+        {
+          "type": "textarea",
+          "label": "Language requirements",
+          "key": "jobProfile.eligibility.languageRequirements",
+          "defaultValue": "=eligibilityCriteria.languageRequirements"
+        },
+        {
+          "type": "textfield",
+          "label": "Rating scoring scale",
+          "key": "jobProfile.rating.scoringScale",
+          "defaultValue": "=ratingCriteria.framework.scoringScale",
+          "validate": { "required": true }
+        },
+        {
+          "type": "number",
+          "label": "Rating minimum passing score",
+          "key": "jobProfile.rating.minimumPassingScore",
+          "defaultValue": "=ratingCriteria.framework.minimumPassingScore",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textfield",
+          "label": "Rating weighting method",
+          "key": "jobProfile.rating.weightingMethod",
+          "defaultValue": "=ratingCriteria.framework.weightingMethod"
+        }
+      ]
+    },
+
+    {
+      "type": "group",
+      "label": "ATS checklist reference (stored version)",
+      "components": [
+        {
+          "type": "textfield",
+          "label": "ATS checklist name",
+          "key": "jobProfile.atsChecklist.name",
+          "defaultValue": "=atsChecklist.name",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textfield",
+          "label": "ATS checklist version",
+          "key": "jobProfile.atsChecklist.version",
+          "defaultValue": "=atsChecklist.version",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textarea",
+          "label": "ATS decision rule",
+          "key": "jobProfile.atsChecklist.decisionRule",
+          "defaultValue": "=atsChecklist.decisionRule",
+          "validate": { "required": true }
+        }
+      ]
+    },
+
+    {
+      "type": "group",
+      "label": "Database storage info (editable)",
+      "components": [
+        {
+          "type": "textfield",
+          "label": "Target database / table (optional text)",
+          "key": "jobProfile.storage.target",
+          "description": "Example: JobProfiles table",
+          "defaultValue": "JobProfiles"
+        },
+        {
+          "type": "textfield",
+          "label": "Storage status",
+          "key": "jobProfile.storage.status",
+          "description": "Example: READY_TO_STORE",
+          "defaultValue": "READY_TO_STORE",
+          "validate": { "required": true }
+        }
+      ]
+    },
+
+    {
+      "type": "group",
+      "label": "Notes (optional)",
+      "components": [
+        {
+          "type": "textarea",
+          "label": "Job profile notes",
+          "key": "jobProfile.notes"
+        }
+      ]
+    }
+  ],
+  "type": "default",
+  "id": "create-job-profile",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.8.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.41.0"
+  },
+  "schemaVersion": 19
+}

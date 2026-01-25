@@ -1,0 +1,293 @@
+{
+  "components": [
+    {
+      "type": "text",
+      "text": "# Create ATS checklist"
+    },
+    {
+      "type": "text",
+      "text": "Create a screening checklist based on eligibility criteria and rating standards. This checklist will be used for ATS screening and recruiter review."
+    },
+
+    {
+      "type": "group",
+      "label": "Context (read-only)",
+      "components": [
+        {
+          "type": "textfield",
+          "label": "Job title",
+          "key": "view_job_title",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.job_title"
+        },
+        {
+          "type": "textfield",
+          "label": "Department",
+          "key": "view_department",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.department"
+        },
+        {
+          "type": "number",
+          "label": "Openings",
+          "key": "view_openings",
+          "readOnly": true,
+          "defaultValue": "=hiringRequest.job_opening.number_of_openings"
+        }
+      ]
+    },
+
+    {
+      "type": "group",
+      "label": "Eligibility summary (read-only reference)",
+      "components": [
+        {
+          "type": "textfield",
+          "label": "Min legal age",
+          "key": "view_min_age",
+          "readOnly": true,
+          "defaultValue": "=eligibilityCriteria.minLegalWorkingAge"
+        },
+        {
+          "type": "checkbox",
+          "label": "Work authorization required",
+          "key": "view_work_auth",
+          "readOnly": true,
+          "defaultValue": "=eligibilityCriteria.workAuthorizationRequired"
+        },
+        {
+          "type": "textfield",
+          "label": "Required education",
+          "key": "view_education",
+          "readOnly": true,
+          "defaultValue": "=eligibilityCriteria.requiredEducationLevel"
+        },
+        {
+          "type": "number",
+          "label": "Min years experience",
+          "key": "view_experience",
+          "readOnly": true,
+          "defaultValue": "=eligibilityCriteria.minYearsExperience"
+        },
+        {
+          "type": "textarea",
+          "label": "Technical prerequisites",
+          "key": "view_tech_prereq",
+          "readOnly": true,
+          "defaultValue": "=eligibilityCriteria.technicalPrerequisites"
+        },
+        {
+          "type": "textarea",
+          "label": "Language requirements",
+          "key": "view_lang_req",
+          "readOnly": true,
+          "defaultValue": "=eligibilityCriteria.languageRequirements"
+        }
+      ]
+    },
+
+    {
+      "type": "group",
+      "label": "Rating framework summary (read-only reference)",
+      "components": [
+        {
+          "type": "textfield",
+          "label": "Scoring scale",
+          "key": "view_scoring_scale",
+          "readOnly": true,
+          "defaultValue": "=ratingCriteria.framework.scoringScale"
+        },
+        {
+          "type": "textfield",
+          "label": "Weighting method",
+          "key": "view_weighting_method",
+          "readOnly": true,
+          "defaultValue": "=ratingCriteria.framework.weightingMethod"
+        },
+        {
+          "type": "number",
+          "label": "Minimum passing score",
+          "key": "view_min_passing_score",
+          "readOnly": true,
+          "defaultValue": "=ratingCriteria.framework.minimumPassingScore"
+        },
+        {
+          "type": "textfield",
+          "label": "Overall recommendation options",
+          "key": "view_reco_options",
+          "readOnly": true,
+          "defaultValue": "=ratingCriteria.final.recommendationOptions"
+        }
+      ]
+    },
+
+    {
+      "type": "group",
+      "label": "ATS checklist metadata (editable output)",
+      "components": [
+        {
+          "type": "textfield",
+          "label": "Checklist name",
+          "key": "atsChecklist.name",
+          "defaultValue": "=hiringRequest.job_opening.job_title",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textfield",
+          "label": "Checklist version",
+          "key": "atsChecklist.version",
+          "description": "Example: v1.0",
+          "defaultValue": "v1.0",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textfield",
+          "label": "Owner / created by",
+          "key": "atsChecklist.owner",
+          "description": "Example: HR team / recruiter name",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textfield",
+          "label": "Effective date",
+          "key": "atsChecklist.effectiveDate",
+          "description": "Example: 2026-01-25",
+          "validate": { "required": true }
+        }
+      ]
+    },
+
+    {
+      "type": "group",
+      "label": "Knockout screening questions (YES/NO rules)",
+      "components": [
+        {
+          "type": "textarea",
+          "label": "Knockout questions (one per line)",
+          "key": "atsChecklist.knockoutQuestions",
+          "description": "Example lines: Must be legally eligible to work in country (Yes required). Must be 18+ (Yes required)."
+        },
+        {
+          "type": "textarea",
+          "label": "Automatic rejection reasons (one per line)",
+          "key": "atsChecklist.autoRejectReasons",
+          "description": "Example: No work authorization; Under minimum experience; Missing required certification."
+        }
+      ]
+    },
+
+    {
+      "type": "group",
+      "label": "Required documents checklist",
+      "components": [
+        {
+          "type": "textarea",
+          "label": "Required documents (one per line)",
+          "key": "atsChecklist.requiredDocuments",
+          "description": "Example: CV, Cover letter, Portfolio link, Work permit proof."
+        },
+        {
+          "type": "checkbox",
+          "label": "Reject if documents are missing",
+          "key": "atsChecklist.rejectIfDocumentsMissing",
+          "defaultValue": true
+        }
+      ]
+    },
+
+    {
+      "type": "group",
+      "label": "ATS scorecard checklist",
+      "components": [
+        {
+          "type": "textfield",
+          "label": "Score scale used in ATS",
+          "key": "atsChecklist.scoreScale",
+          "defaultValue": "=ratingCriteria.framework.scoringScale",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textarea",
+          "label": "Scorecard criteria (one per line)",
+          "key": "atsChecklist.scorecardCriteria",
+          "description": "Example: Technical competency; Problem solving; Communication; Experience relevance; Culture fit."
+        },
+        {
+          "type": "textarea",
+          "label": "How to calculate final score (text)",
+          "key": "atsChecklist.scoreCalculationRule",
+          "defaultValue": "=ratingCriteria.framework.overallScoreFormula",
+          "validate": { "required": true }
+        },
+        {
+          "type": "number",
+          "label": "Minimum passing score (final)",
+          "key": "atsChecklist.minimumPassingScore",
+          "defaultValue": "=ratingCriteria.framework.minimumPassingScore",
+          "validate": { "required": true }
+        }
+      ]
+    },
+
+    {
+      "type": "group",
+      "label": "Red flags and manual review",
+      "components": [
+        {
+          "type": "textarea",
+          "label": "Red flag indicators (one per line)",
+          "key": "atsChecklist.redFlagIndicators",
+          "defaultValue": "=ratingCriteria.final.redFlagIndicators"
+        },
+        {
+          "type": "textarea",
+          "label": "Manual review checklist (one per line)",
+          "key": "atsChecklist.manualReviewItems",
+          "description": "Example: Employment gaps explanation; Reference checks; Consistency of dates."
+        }
+      ]
+    },
+
+    {
+      "type": "group",
+      "label": "Final decision rule",
+      "components": [
+        {
+          "type": "textarea",
+          "label": "Decision rule (text)",
+          "key": "atsChecklist.decisionRule",
+          "description": "Example: If any knockout fails => Reject. Else if score >= min => Proceed. Else => Hold/Reject.",
+          "validate": { "required": true }
+        },
+        {
+          "type": "textfield",
+          "label": "Recommendation options",
+          "key": "atsChecklist.recommendationOptions",
+          "defaultValue": "=ratingCriteria.final.recommendationOptions",
+          "validate": { "required": true }
+        }
+      ]
+    },
+
+    {
+      "type": "group",
+      "label": "Notes (optional)",
+      "components": [
+        {
+          "type": "textarea",
+          "label": "ATS checklist notes",
+          "key": "atsChecklist.notes"
+        }
+      ]
+    }
+  ],
+  "type": "default",
+  "id": "create-ats-checklist",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.8.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.41.0"
+  },
+  "schemaVersion": 19
+}

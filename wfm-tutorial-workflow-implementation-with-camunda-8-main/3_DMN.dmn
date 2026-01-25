@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="Definitions_0fqr25p" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.40.1" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.8.0">
+  <decision id="WorkToBePerformedDecision" name="Work to be performed">
+    <informationRequirement id="InformationRequirement_0rgtvjt">
+      <requiredInput href="#InputData_0rjbwl2" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0k0zq5g">
+      <requiredInput href="#InputData_0a1i63q" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_0zgzd9m">
+      <input id="Input_1" label="work">
+        <inputExpression id="InputExpression_1" typeRef="number">
+          <text>work</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0tl99n5" label="mood">
+        <inputExpression id="LiteralExpression_1p2cg26" typeRef="string">
+          <text>mood</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_102sz0y">
+          <text>"Good","Bad","Angry","Happy"</text>
+        </inputValues>
+      </input>
+      <output id="Output_1" label="performWork" name="performWork" typeRef="string" />
+      <rule id="DecisionRule_1mr9suk">
+        <inputEntry id="UnaryTests_0ha5bhk">
+          <text>[0..10]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09wqbri">
+          <text>"Good"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0le9t8t">
+          <text>"Juggling"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1f81dos">
+        <inputEntry id="UnaryTests_1yp8q1a">
+          <text>[0..10]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nyrys8">
+          <text>"Bad"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1sq4h69">
+          <text>"Eat a pizza"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1c5mrst">
+        <inputEntry id="UnaryTests_1jkol87">
+          <text>[0..10]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ryk7fj">
+          <text>"Angry"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_011coo4">
+          <text>"Go boxing"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1tm0i3y">
+        <inputEntry id="UnaryTests_0uybv5d">
+          <text>[0..10]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0l472p5">
+          <text>"Happy"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0mlx69y">
+          <text>"Play the piano"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_168or2f">
+        <inputEntry id="UnaryTests_0yb6zxv">
+          <text>[11..20]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sya1xq">
+          <text>"Good"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bn44mr">
+          <text>"Programm something in Java"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0j7nzcz">
+        <inputEntry id="UnaryTests_0hgsm3t">
+          <text>[11..20]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_152wr68">
+          <text>"Bad"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_09iyi8q">
+          <text>"Programm something in Python"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1n9uhy8">
+        <inputEntry id="UnaryTests_0of28ea">
+          <text>[11..20]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0i20vz5">
+          <text>"Happy"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xwxlk5">
+          <text>"Write a novel"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1j2a76x">
+        <inputEntry id="UnaryTests_17ickng">
+          <text>[11..20]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0i0zqdh">
+          <text>"Bad"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0g3a2mb">
+          <text>"Eat a snickers"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1y19cji">
+        <inputEntry id="UnaryTests_11l5bcu">
+          <text>&gt;20</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14ulb0f">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15kaat0">
+          <text>"Do nothing"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_0rjbwl2" name="work" />
+  <inputData id="InputData_0a1i63q" name="mood" />
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="WorkToBePerformedDecision">
+        <dc:Bounds height="80" width="180" x="280" y="100" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1qf6sr7" dmnElementRef="InputData_0rjbwl2">
+        <dc:Bounds height="45" width="125" x="158" y="258" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1lfx1ch" dmnElementRef="InformationRequirement_0rgtvjt">
+        <di:waypoint x="221" y="258" />
+        <di:waypoint x="340" y="200" />
+        <di:waypoint x="340" y="180" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1nvnddm" dmnElementRef="InputData_0a1i63q">
+        <dc:Bounds height="45" width="125" x="418" y="259" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0d28ahp" dmnElementRef="InformationRequirement_0k0zq5g">
+        <di:waypoint x="481" y="259" />
+        <di:waypoint x="400" y="200" />
+        <di:waypoint x="400" y="180" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

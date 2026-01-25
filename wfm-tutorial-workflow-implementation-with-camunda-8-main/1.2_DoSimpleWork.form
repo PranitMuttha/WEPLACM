@@ -1,0 +1,47 @@
+{
+  "components": [
+    {
+      "text": "# Do some simple work here",
+      "type": "text",
+      "id": "Field_0mczq0k",
+      "layout": {
+        "row": "Row_1tphgwt"
+      }
+    },
+    {
+      "label": "Select the work",
+      "values": [
+        {
+          "label": "Leg workout",
+          "value": "Leg workout"
+        },
+        {
+          "label": "Study Knowlege Management",
+          "value": "Study knowlege management"
+        },
+        {
+          "label": "Play some music",
+          "value": "Play some music"
+        }
+      ],
+      "type": "select",
+      "id": "Field_1pxphbu",
+      "key": "selectedWork",
+      "validate": {
+        "required": true
+      },
+      "layout": {
+        "row": "Row_0pva4we"
+      }
+    }
+  ],
+  "type": "default",
+  "id": "Form_DoSimpleWork",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.8.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.40.1"
+  },
+  "schemaVersion": 19
+}

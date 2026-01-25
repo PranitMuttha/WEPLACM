@@ -1,0 +1,43 @@
+{
+  "components": [
+    {
+      "text": "# Please add the hours of expected work",
+      "type": "text",
+      "id": "Field_1adkzgk",
+      "layout": {
+        "row": "Row_13ohrfq"
+      }
+    },
+    {
+      "label": "Work",
+      "type": "number",
+      "id": "Field_0wf7o2b",
+      "key": "work",
+      "layout": {
+        "row": "Row_1f3voem"
+      },
+      "disabled": false,
+      "readonly": false
+    },
+    {
+      "label": "Select your mensa meal",
+      "type": "select",
+      "layout": {
+        "row": "Row_0q0gd9m",
+        "columns": null
+      },
+      "id": "Field_0dptgmf",
+      "key": "mealselect",
+      "valuesExpression": "=for meal in mensa\nreturn {\"label\": meal.value, \"value\": meal.key}"
+    }
+  ],
+  "type": "default",
+  "id": "Form_DefineWork",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.8.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.40.1"
+  },
+  "schemaVersion": 19
+}
