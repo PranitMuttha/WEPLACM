@@ -1,0 +1,12 @@
+Host - 141.26.156.184
+Port - 4532
+User - user
+Password - password
+database name - my_database
+
+
+--> 
+How to see tables 
+download the pgAdmin4 -> install -> open it
+
+ser server to above configuration

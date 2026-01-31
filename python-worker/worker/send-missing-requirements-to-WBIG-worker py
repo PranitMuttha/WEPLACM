@@ -44,33 +44,6 @@ def register_prepare_missing_requirements(worker: ZeebeWorker) -> None:
             "missingRequirements": {"count": len(missing), "fields": missing},
             "notification": {"subject": "Missing information in hiring request", "body": email_body},
         }
-    
-def register_capture_joining_date(worker: ZeebeWorker) -> None:
-    @worker.task(task_type="requested_joining_date")
-    async def capture_joining_date(job: Job):
-        variables = job.variables
-        hiring_request = variables.get("hiringRequest", {})
-        job_opening = hiring_request.get("job_opening", {})
-
-        # adjust the key to match your real request structure
-        joining_date = job_opening.get("starting_date") or hiring_request.get("requested_joining_date")
-
-        return {
-            "requestedJoiningDate": joining_date
-        }
-
-# def register_create_job_posting_template(worker: ZeebeWorker) -> None:
-#     @worker.task(task_type="create-job-posting-template")
-#     async def create_job_posting_template(job: Job):
-#         # TODO: implement
-#         return {"templateCreated": True}
-
-
-# def register_send_missing_requirements(worker: ZeebeWorker) -> None:
-#     @worker.task(task_type="send-missing-requirements-email")
-#     async def send_missing_requirements_email(job: Job):
-#         # TODO: implement email sending
-#         return {"emailSent": True}
 
 
 async def main():
@@ -79,11 +52,7 @@ async def main():
     worker = ZeebeWorker(channel)
     print("Worker created")
     
-    # Register all task handlers
     register_prepare_missing_requirements(worker)
-    register_capture_joining_date(worker)
-    # register_create_job_posting_template(worker)
-    # register_send_missing_requirements(worker)
 
     await worker.work()
 
