@@ -16,7 +16,7 @@
           "type": "textfield",
           "key": "hiringRequest.company.name",
           "id": "Field_0jz1q10",
-          "readonly": true,
+          "readOnly": true,
           "layout": {
             "row": "Row_1mwvyun"
           }
@@ -26,7 +26,7 @@
           "type": "textfield",
           "key": "hiringRequest.job_opening.job_title",
           "id": "Field_01vydh6",
-          "readonly": true,
+          "readOnly": true,
           "layout": {
             "row": "Row_0fvs9dl"
           }
@@ -36,7 +36,7 @@
           "type": "number",
           "key": "hiringRequest.job_opening.number_of_openings",
           "id": "Field_0n0vutw",
-          "readonly": true,
+          "readOnly": true,
           "layout": {
             "row": "Row_0nqs42g"
           }
@@ -46,7 +46,7 @@
           "type": "textfield",
           "key": "hiringRequest.job_opening.department",
           "id": "Field_11nd3i0",
-          "readonly": true,
+          "readOnly": true,
           "layout": {
             "row": "Row_0xvdfgz"
           }
@@ -56,7 +56,7 @@
           "type": "textfield",
           "key": "hiringRequest.job_opening.work_mode",
           "id": "Field_16onelb",
-          "readonly": true,
+          "readOnly": true,
           "layout": {
             "row": "Row_0gcsoa9"
           }
@@ -80,7 +80,7 @@
             "required": true
           },
           "id": "Field_0ul2mvr",
-          "readonly": false,
+          "readOnly": false,
           "layout": {
             "row": "Row_0g3y8mb"
           }
@@ -93,7 +93,7 @@
             "required": true
           },
           "id": "Field_15kpdzq",
-          "readonly": false,
+          "readOnly": false,
           "layout": {
             "row": "Row_0u791pf"
           }
@@ -107,7 +107,7 @@
             "required": true
           },
           "id": "Field_0yy9vuo",
-          "readonly": false,
+          "readOnly": false,
           "layout": {
             "row": "Row_02ipchp"
           }
@@ -121,7 +121,7 @@
             "required": true
           },
           "id": "Field_1abcjdn",
-          "readonly": false,
+          "readOnly": false,
           "layout": {
             "row": "Row_0yup73v"
           }
@@ -131,7 +131,7 @@
           "type": "textarea",
           "key": "jobPostingTemplate.benefits",
           "id": "Field_0yctwd0",
-          "readonly": false,
+          "readOnly": false,
           "layout": {
             "row": "Row_12c2zgs"
           }
@@ -156,7 +156,7 @@
             "required": true
           },
           "id": "Field_0nr7ntk",
-          "readonly": false,
+          "readOnly": false,
           "layout": {
             "row": "Row_1nov16p"
           }
@@ -169,7 +169,7 @@
             "required": true
           },
           "id": "Field_1dos1ii",
-          "readonly": false,
+          "readOnly": false,
           "layout": {
             "row": "Row_0ptbjfl"
           }
@@ -182,7 +182,7 @@
             "required": true
           },
           "id": "Field_1n2qaq0",
-          "readonly": false,
+          "readOnly": false,
           "layout": {
             "row": "Row_13s9pdd"
           }
@@ -192,7 +192,7 @@
           "type": "textfield",
           "key": "jobPostingTemplate.salaryText",
           "id": "Field_016x75b",
-          "readonly": false,
+          "readOnly": false,
           "layout": {
             "row": "Row_0uzrmrd"
           }
@@ -213,6 +213,7 @@
           "type": "checkbox",
           "key": "jobPostingTemplate.publishOnline",
           "id": "Field_1p2brjy",
+          "defaultValue": false,
           "layout": {
             "row": "Row_1ocbm3l"
           }

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-start gap-3 flex-wrap">
+  <div>
+    <h2 class="mb-1">{{ job.job_title }}</h2>
+    <div class="text-muted">{{ job.company_name }} • {{ job.work_mode or "-" }} • {{ job.department or "-" }}</div>
+  </div>
+  <div>
+    <a class="btn btn-primary" href="/jobs/{{ job.job_id }}/apply">Apply now</a>
+  </div>
+</div>
+
+<hr/>
+
+<div class="row g-3">
+  <div class="col-lg-8">
+    <h4>Description</h4>
+    <p style="white-space: pre-wrap;">{{ job.job_description }}</p>
+
+    <h4 class="mt-4">Requirements</h4>
+    <pre class="bg-light p-3 rounded">{{ job.requirements | tojson(indent=2) }}</pre>
+
+    <h4 class="mt-4">Employment details</h4>
+    <pre class="bg-light p-3 rounded">{{ job.employment_details | tojson(indent=2) }}</pre>
+  </div>
+
+  <div class="col-lg-4">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Summary</h5>
+        <p class="mb-1"><b>Job ID:</b> {{ job.job_id }}</p>
+        <p class="mb-1"><b>Openings:</b> {{ job.number_of_openings or "-" }}</p>
+        <p class="mb-1"><b>Locations:</b> {{ job.locations | tojson }}</p>
+        <p class="mb-1"><b>Status:</b> {{ job.status }}</p>
+        <p class="mb-1"><b>Applications:</b> {{ job.application_count }}</p>
+        <hr/>
+        <h6>Contact</h6>
+        <pre class="bg-light p-2 rounded small">{{ job.contact | tojson(indent=2) }}</pre>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

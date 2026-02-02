@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="alert alert-success">
+  <h4 class="alert-heading">Application submitted!</h4>
+  <p>Thanks for applying. We received your application for job <b>{{ job_id }}</b>.</p>
+  <hr/>
+  <a class="btn btn-primary" href="/jobs/{{ job_id }}">Back to job</a>
+  <a class="btn btn-outline-secondary" href="/jobs">Browse more jobs</a>
+</div>
+{% endblock %}

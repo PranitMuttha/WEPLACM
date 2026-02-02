@@ -1,181 +1,191 @@
 {
   "components": [
     {
-      "text": "# Define candidate eligibility criteria",
       "type": "text",
+      "text": "# Define candidate eligibility criteria",
       "id": "Field_0vsbxzc"
     },
     {
-      "text": "Review the origin company’s eligibility standards and define the final eligibility criteria for this job.",
       "type": "text",
+      "text": "Review the origin company’s eligibility standards and define the final eligibility criteria for this job.",
       "id": "Field_0xa0pdm"
     },
     {
-      "label": "Context",
+      "type": "group",
+      "label": "Context (read-only)",
+      "showOutline": true,
       "components": [
         {
-          "label": "Job title (request)",
           "type": "textfield",
-          "key": "hiringRequest.job_opening.job_title"
+          "label": "Job title",
+          "key": "hiringRequest.job_opening.job_title",
+          "readOnly": true
         },
         {
-          "label": "Department (request)",
           "type": "textfield",
-          "key": "hiringRequest.job_opening.department"
+          "label": "Department",
+          "key": "hiringRequest.job_opening.department",
+          "readOnly": true
         },
         {
-          "label": "Employment type (request)",
           "type": "textfield",
-          "key": "hiringRequest.job_opening.employment_details.job_type"
+          "label": "Employment type",
+          "key": "hiringRequest.job_opening.employment_details.job_type",
+          "readOnly": true
         },
         {
-          "label": "Work mode (request)",
           "type": "textfield",
-          "key": "hiringRequest.job_opening.work_mode"
+          "label": "Work mode",
+          "key": "hiringRequest.job_opening.work_mode",
+          "readOnly": true
         }
       ],
-      "showOutline": true,
-      "type": "group",
       "id": "Field_1eyz6ri"
     },
     {
-      "label": "Origin company standards",
+      "type": "group",
+      "label": "Origin company standards (read-only reference)",
+      "showOutline": true,
       "components": [
         {
-          "label": "Minimum legal working age",
-          "type": "textfield",
-          "key": "originStandards.standards_of_eligibility.legal_and_compliance.minimum_legal_working_age"
-        },
-        {
-          "label": "Work authorization required",
-          "type": "checkbox",
-          "key": "originStandards.standards_of_eligibility.legal_and_compliance.work_authorization_required"
-        },
-        {
-          "label": "Background check required",
-          "type": "checkbox",
-          "key": "originStandards.standards_of_eligibility.legal_and_compliance.background_check_required"
-        },
-        {
-          "label": "Drug testing required",
-          "type": "checkbox",
-          "key": "originStandards.standards_of_eligibility.legal_and_compliance.drug_testing_required"
-        },
-        {
-          "label": "Required education level",
-          "type": "textfield",
-          "key": "originStandards.standards_of_eligibility.minimum_qualifications.required_education_level"
-        },
-        {
-          "label": "Minimum years experience",
           "type": "number",
-          "key": "originStandards.standards_of_eligibility.minimum_qualifications.minimum_years_experience"
+          "label": "Minimum legal working age",
+          "key": "originStandards.standards_of_eligibility.legal_and_compliance.minimum_legal_working_age",
+          "readOnly": true
+        },
+        {
+          "type": "checkbox",
+          "label": "Work authorization required",
+          "key": "originStandards.standards_of_eligibility.legal_and_compliance.work_authorization_required",
+          "readOnly": true
+        },
+        {
+          "type": "checkbox",
+          "label": "Background check required",
+          "key": "originStandards.standards_of_eligibility.legal_and_compliance.background_check_required",
+          "readOnly": true
+        },
+        {
+          "type": "checkbox",
+          "label": "Drug testing required",
+          "key": "originStandards.standards_of_eligibility.legal_and_compliance.drug_testing_required",
+          "readOnly": true
+        },
+        {
+          "type": "textfield",
+          "label": "Required education level",
+          "key": "originStandards.standards_of_eligibility.minimum_qualifications.required_education_level",
+          "readOnly": true
+        },
+        {
+          "type": "number",
+          "label": "Minimum years experience",
+          "key": "originStandards.standards_of_eligibility.minimum_qualifications.minimum_years_experience",
+          "readOnly": true
         }
       ],
-      "showOutline": true,
-      "type": "group",
       "id": "Field_1pjsrsj"
     },
     {
+      "type": "group",
       "label": "Final eligibility criteria",
+      "showOutline": true,
       "components": [
         {
+          "type": "number",
           "label": "Minimum legal working age",
-          "type": "textfield",
           "key": "eligibilityCriteria.minLegalWorkingAge",
-          "validate": { "required": true }
+          "validate": { "required": true, "min": 0 }
         },
         {
-          "label": "Work authorization required",
           "type": "checkbox",
+          "label": "Work authorization required",
           "key": "eligibilityCriteria.workAuthorizationRequired"
         },
         {
-          "label": "Background check required",
           "type": "checkbox",
+          "label": "Background check required",
           "key": "eligibilityCriteria.backgroundCheckRequired"
         },
         {
-          "label": "Drug testing required",
           "type": "checkbox",
+          "label": "Drug testing required",
           "key": "eligibilityCriteria.drugTestingRequired"
         },
         {
-          "label": "Required education level",
           "type": "textfield",
+          "label": "Required education level",
           "key": "eligibilityCriteria.requiredEducationLevel",
           "validate": { "required": true }
         },
         {
-          "label": "Minimum years of experience",
           "type": "number",
+          "label": "Minimum years of experience",
           "key": "eligibilityCriteria.minYearsExperience",
-          "validate": { "required": true }
+          "validate": { "required": true, "min": 0 }
         },
         {
-          "label": "Required certifications (one per line)",
           "type": "textarea",
+          "label": "Required certifications (one per line)",
           "key": "eligibilityCriteria.requiredCertifications"
         },
         {
-          "label": "Language requirements (one per line)",
           "type": "textarea",
+          "label": "Language requirements (one per line)",
           "key": "eligibilityCriteria.languageRequirements"
         },
         {
-          "label": "Technical prerequisites (one per line)",
           "type": "textarea",
+          "label": "Technical prerequisites (one per line)",
           "key": "eligibilityCriteria.technicalPrerequisites"
         }
       ],
-      "showOutline": true,
-      "type": "group",
       "id": "Field_0w2v1pp"
     },
     {
+      "type": "group",
       "label": "Disqualification rules",
+      "showOutline": true,
       "components": [
         {
-          "label": "Disqualify if application is incomplete",
           "type": "checkbox",
+          "label": "Disqualify if application is incomplete",
           "key": "eligibilityCriteria.disqualifyIfIncompleteApplication"
         },
         {
-          "label": "Disqualify if minimum qualifications are not met",
           "type": "checkbox",
+          "label": "Disqualify if minimum qualifications are not met",
           "key": "eligibilityCriteria.disqualifyIfDoesNotMeetMinimumQualifications"
         },
         {
-          "label": "Disqualify if legal/compliance is not met",
           "type": "checkbox",
+          "label": "Disqualify if legal/compliance is not met",
           "key": "eligibilityCriteria.disqualifyIfLegalNonCompliance"
         },
         {
-          "label": "Disqualify if false information is provided",
           "type": "checkbox",
+          "label": "Disqualify if false information is provided",
           "key": "eligibilityCriteria.disqualifyIfFalseInformation"
         },
         {
-          "label": "Disqualify if background/reference check is failed",
           "type": "checkbox",
+          "label": "Disqualify if background/reference check is failed",
           "key": "eligibilityCriteria.disqualifyIfFailedBackgroundOrReferenceCheck"
         }
       ],
-      "showOutline": true,
-      "type": "group",
       "id": "Field_0mz7r4c"
     },
     {
+      "type": "group",
       "label": "Notes",
+      "showOutline": true,
       "components": [
         {
-          "label": "Eligibility notes / exceptions (optional)",
           "type": "textarea",
+          "label": "Eligibility notes / exceptions (optional)",
           "key": "eligibilityCriteria.notes"
         }
       ],
-      "showOutline": true,
-      "type": "group",
       "id": "Field_01rzjjl"
     }
   ],

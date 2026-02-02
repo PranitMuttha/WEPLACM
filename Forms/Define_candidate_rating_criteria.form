@@ -5,206 +5,125 @@
       "text": "# Define candidate rating criteria"
     },
     {
-      "type": "text",
-      "text": "Review origin rating standards and define the final evaluation framework, scoring scale, and weights."
-    },
-    {
       "type": "group",
-      "label": "Context",
+      "label": "Context (read-only)",
+      "showOutline": true,
       "components": [
         {
           "type": "textfield",
           "label": "Job title",
-          "key": "hiringRequest.job_opening.job_title"
+          "key": "hiringRequest.job_opening.job_title",
+          "readOnly": true
         },
         {
           "type": "textfield",
           "label": "Department",
-          "key": "hiringRequest.job_opening.department"
+          "key": "hiringRequest.job_opening.department",
+          "readOnly": true
         },
         {
           "type": "textfield",
           "label": "Work mode",
-          "key": "hiringRequest.job_opening.work_mode"
+          "key": "hiringRequest.job_opening.work_mode",
+          "readOnly": true
         }
       ]
     },
     {
       "type": "group",
-      "label": "Origin standards",
+      "label": "Evaluation framework",
+      "showOutline": true,
       "components": [
         {
           "type": "textfield",
           "label": "Evaluation stage",
-          "key": "originStandards.candidate_rating_standards.evaluation_framework.evaluation_stage"
-        },
-        {
-          "type": "textfield",
-          "label": "Evaluator role",
-          "key": "originStandards.candidate_rating_standards.evaluation_framework.evaluator_role"
-        },
-        {
-          "type": "textfield",
-          "label": "Scoring scale",
-          "key": "originStandards.candidate_rating_standards.evaluation_framework.scoring_scale"
-        },
-        {
-          "type": "textfield",
-          "label": "Weighting method",
-          "key": "originStandards.candidate_rating_standards.evaluation_framework.weighting_method"
-        },
-        {
-          "type": "number",
-          "label": "Minimum passing score",
-          "key": "originStandards.candidate_rating_standards.evaluation_framework.minimum_passing_score"
-        },
-        {
-          "type": "textfield",
-          "label": "Overall score formula",
-          "key": "originStandards.candidate_rating_standards.evaluation_framework.overall_score_formula"
-        }
-      ]
-    },
-    {
-      "type": "group",
-      "label": "Final evaluation framework",
-      "components": [
-        {
-          "type": "textfield",
-          "label": "Evaluation stage",
-          "key": "ratingCriteria.framework.evaluationStage",
+          "key": "ratingCriteria.stage",
           "validate": { "required": true }
         },
         {
           "type": "textfield",
           "label": "Evaluator role",
-          "key": "ratingCriteria.framework.evaluatorRole",
+          "key": "ratingCriteria.evaluatorRole",
           "validate": { "required": true }
         },
         {
-          "type": "textfield",
-          "label": "Scoring scale (example: 0-5, 0-10, 0-100)",
-          "key": "ratingCriteria.framework.scoringScale",
+          "type": "number",
+          "label": "Score scale minimum",
+          "key": "0",
           "validate": { "required": true }
         },
         {
-          "type": "textfield",
-          "label": "Weighting method (example: weighted-average)",
-          "key": "ratingCriteria.framework.weightingMethod",
-          "validate": { "required": true }
+          "type": "number",
+          "label": "Score scale maximum",
+          "key": "5",
+          "validate": { "required": true, "min": 1 }
         },
         {
           "type": "number",
           "label": "Minimum passing score",
-          "key": "ratingCriteria.framework.minimumPassingScore",
-          "validate": { "required": true }
-        },
-        {
-          "type": "textfield",
-          "label": "Overall score formula (text)",
-          "key": "ratingCriteria.framework.overallScoreFormula",
-          "validate": { "required": true }
+          "key": "ratingCriteria.minimumPassingScore",
+          "validate": { "required": true, "min": 0 }
         }
       ]
     },
     {
       "type": "group",
-      "label": "Category weights (must sum to 100)",
+      "label": "Category weights (%)",
+      "showOutline": true,
       "components": [
         {
           "type": "number",
-          "label": "Technical / skills assessment weight (%)",
-          "key": "ratingCriteria.weights.skillsAssessment",
+          "label": "Technical / skills",
+          "key": "ratingCriteria.weights.skills",
           "validate": { "required": true, "min": 0, "max": 100 }
         },
         {
           "type": "number",
-          "label": "Behavioral / soft skills weight (%)",
-          "key": "ratingCriteria.weights.behavioralSoftSkills",
+          "label": "Behavioral / soft skills",
+          "key": "ratingCriteria.weights.behavioral",
           "validate": { "required": true, "min": 0, "max": 100 }
         },
         {
           "type": "number",
-          "label": "Experience & impact weight (%)",
-          "key": "ratingCriteria.weights.experienceImpact",
+          "label": "Experience",
+          "key": "ratingCriteria.weights.experience",
           "validate": { "required": true, "min": 0, "max": 100 }
         },
         {
           "type": "number",
-          "label": "Cultural / organizational fit weight (%)",
-          "key": "ratingCriteria.weights.cultureFit",
-          "validate": { "required": true, "min": 0, "max": 100 }
-        },
-        {
-          "type": "number",
-          "label": "Interview / assessments weight (%)",
-          "key": "ratingCriteria.weights.interviewAssessments",
+          "label": "Interview",
+          "key": "ratingCriteria.weights.interview",
           "validate": { "required": true, "min": 0, "max": 100 }
         }
       ]
     },
     {
       "type": "group",
-      "label": "Detailed scoring guidance",
+      "label": "Scoring guidance",
+      "showOutline": true,
       "components": [
         {
           "type": "textarea",
-          "label": "Skills assessment criteria (one per line)",
-          "key": "ratingCriteria.details.skillsAssessment"
+          "label": "Key evaluation criteria (one per line)",
+          "key": "ratingCriteria.criteria"
         },
         {
           "type": "textarea",
-          "label": "Behavioral & soft skills criteria (one per line)",
-          "key": "ratingCriteria.details.behavioralSoftSkills"
-        },
-        {
-          "type": "textarea",
-          "label": "Experience & impact criteria (one per line)",
-          "key": "ratingCriteria.details.experienceImpact"
-        },
-        {
-          "type": "textarea",
-          "label": "Cultural & organizational fit criteria (one per line)",
-          "key": "ratingCriteria.details.cultureFit"
-        },
-        {
-          "type": "textarea",
-          "label": "Interview & assessments criteria (one per line)",
-          "key": "ratingCriteria.details.interviewAssessments"
+          "label": "Red flags (one per line)",
+          "key": "ratingCriteria.redFlags"
         }
       ]
     },
     {
       "type": "group",
-      "label": "Final evaluation rules",
+      "label": "Final decision",
+      "showOutline": true,
       "components": [
         {
           "type": "textarea",
-          "label": "Red flag indicators (one per line)",
-          "key": "ratingCriteria.final.redFlagIndicators"
-        },
-        {
-          "type": "textfield",
-          "label": "Overall recommendation options (text)",
-          "key": "ratingCriteria.final.recommendationOptions",
-          "validate": { "required": true }
-        },
-        {
-          "type": "textarea",
-          "label": "Notes (optional)",
-          "key": "ratingCriteria.notes"
-        }
-      ]
-    },
-    {
-      "type": "group",
-      "label": "Quick check (manual)",
-      "components": [
-        {
-          "type": "number",
-          "label": "Confirm total weight (%) (enter 100)",
-          "key": "ratingCriteria.weightTotalCheck",
-          "validate": { "required": true }
+          "label": "Recommendation options (one per line)",
+          "key": "ratingCriteria.recommendations",
+          "validate": { "required": false }
         }
       ]
     }

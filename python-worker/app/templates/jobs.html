@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-3">Open Positions</h2>
+
+{% if jobs|length == 0 %}
+  <div class="alert alert-info">No jobs published yet.</div>
+{% endif %}
+
+<div class="row g-3">
+  {% for job in jobs %}
+  <div class="col-md-6 col-lg-4">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">{{ job.job_title }}</h5>
+        <p class="card-text mb-1"><b>{{ job.company_name }}</b></p>
+        <p class="card-text text-muted mb-1">Dept: {{ job.department or "-" }}</p>
+        <p class="card-text text-muted mb-3">Work mode: {{ job.work_mode or "-" }}</p>
+        <a class="btn btn-outline-primary" href="/jobs/{{ job.job_id }}">View details</a>
+      </div>
+      <div class="card-footer small text-muted">
+        Job ID: {{ job.job_id }}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
